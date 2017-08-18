@@ -105,7 +105,7 @@
     display: flex;
     flex-flow: column nowrap;
     & > section {
-	flex-basis: 2em;
+        flex-basis: 2em;
     }
 }
 
@@ -115,23 +115,23 @@
     justify-content: space-between;
 
     & > div {
-	word-break: break-all;
-	flex-basis: 34%;
-	padding-right: 1em;
-	text-align: right;
+        word-break: break-all;
+        flex-basis: 34%;
+        padding-right: 1em;
+        text-align: right;
     }
 
     & > div.transaction-details-label {
-	flex-basis: 10em;
-	text-align: left;
+        flex-basis: 10em;
+        text-align: left;
     }
 }
 
 @media (max-width: 767px) {
     .transaction-details-row {
-	flex-flow: column wrap;
-	& > div, & > .transaction-details-label {
-    	    flex-basis: 100% !important;
-	}
+        flex-flow: column wrap;
+        & > div, & > .transaction-details-label {
+            flex-basis: 100% !important;
+        }
     }
 }

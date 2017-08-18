@@ -59,27 +59,27 @@
     <div *ngIf="getExpandedTransactionID() === (tx.txid + tx.getAmount() + tx.category)" class="cell-expanded-row background-hack">
       <div [attr.colspan]="getColumnCount()" class="padding-reset-hack border-reset-hack transaction-details">
 
-	<section class="wrap-flexbox">
+        <section class="wrap-flexbox">
           <div class="transaction-details-row">
             <div class="transaction-details-label">
-	      <b>Status:</b>
+              <b>Status:</b>
             </div>
             <div>
-	      {{tx.confirmations}} confirmations
+              {{tx.confirmations}} confirmations
             </div>
             <div class="transaction-details-label">
-	      <b>Transaction ID:</b>
+              <b>Transaction ID:</b>
             </div>
             <div>
-	      {{tx.txid}}
+              {{tx.txid}}
             </div>
           </div>
-	</section>
-	
-	<section class="wrap-flexbox">
-	  <div class="transaction-details-row">
+        </section>
+        
+        <section class="wrap-flexbox">
+          <div class="transaction-details-row">
             <div class="transaction-details-label">
-	      <b>Date:</b>
+              <b>Date:</b>
             </div>
             <div>
               {{tx.getDate()}}
@@ -91,10 +91,10 @@
               {{tx.fee ? tx.fee : 0}} PART
             </div>
           </div>
-	</section>
+        </section>
 
-	<section class="wrap-flexbox">
-	  <div class="transaction-details-row">
+        <section class="wrap-flexbox">
+          <div class="transaction-details-row">
             <div class="transaction-details-label">
               <b>To:</b>
             </div>
@@ -108,10 +108,10 @@
               {{tx.fee ? tx.getAmount() - tx.fee : 0}} PART
             </div>
           </div>
-	</section>
+        </section>
 
-	<section class="wrap-flexbox">
-	  <div class="transaction-details-row">
+        <section class="wrap-flexbox">
+          <div class="transaction-details-row">
             <div class="transaction-details-label" *ngIf="tx.category === 'stake' || tx.category === 'receive' || tx.category === 'coinbase' || tx.category === 'orphaned_stake'">
               <b>Credit:</b>
             </div>
@@ -122,7 +122,7 @@
               {{tx.getAmount()}} PART
             </div>
           </div>
-	</section>
+        </section>
 
       </div>
     </div>
