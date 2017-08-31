@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { NgxElectronModule } from 'ngx-electron';
 import { BsDropdownModule, CollapseModule, ModalModule, ModalDirective, PaginationModule, TooltipModule } from 'ngx-bootstrap';
@@ -36,13 +39,18 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({ routerReducer: routerReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 50
+    }),
     RouterModule.forRoot(routes),
     NgxElectronModule,
     SharedModule,
     SidebarModule.forRoot(),
     WalletModule.forRoot(),
     RpcModule.forRoot(),
-    ModalsModule
+    ModalsModule,
+    StoreRouterConnectingModule
   ],
   providers: [
     WindowService,
